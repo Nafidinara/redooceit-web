@@ -25,6 +25,9 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
         Route::get('accordion', function() {return view('mazer.components.accordion');})->name('accordion');
         Route::get('table', function() {return view('mazer.components.table');})->name('table');
         Route::get('form', function() {return view('mazer.components.form');})->name('form');
+        Route::get('card', function() {return view('mazer.components.card');})->name('card');
+        Route::get('carousel', function() {return view('mazer.components.carousel');})->name('carousel');
+        Route::get('progress', function() {return view('mazer.components.progress');})->name('progress');
     });
 });
 
