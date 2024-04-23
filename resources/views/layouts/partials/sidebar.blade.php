@@ -8,4 +8,13 @@
         <x-mazer-sidebar-subitem :link="route('component.carousel')" name="carousel" :active="false"/>
         <x-mazer-sidebar-subitem :link="route('component.progress')" name="progress" :active="false"/>
     </x-mazer-sidebar-item>
+    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('dashboard')" name="Pengguna">
+        <x-mazer-sidebar-subitem :link="route('pengguna.user')" name="tableUser" :active="false"/>
+    </x-mazer-sidebar-item>
+    <x-mazer-sidebar-item icon="" :link="route('dashboard')" name="Form & Table">
+        {{-- <x-mazer-sidebar-subitem :link="route('pengguna.user')" name="tableUser" :active="false"/> --}}
+    </x-mazer-sidebar-item>
+    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('dashboard')" name="Form Elements">
+        <x-mazer-sidebar-subitem :link="route('pengguna.user')" name="tableUser" :active="false"/>
+    </x-mazer-sidebar-item>
 </x-mazer-sidebar>

@@ -28,6 +28,10 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
         Route::get('card', function() {return view('mazer.components.card');})->name('card');
         Route::get('carousel', function() {return view('mazer.components.carousel');})->name('carousel');
         Route::get('progress', function() {return view('mazer.components.progress');})->name('progress');
+        Route::get('datatable', function() {return view('mazer.table.datatable');})->name('datatable');
+    });
+    Route::group(['prefix' => 'pengguna', 'as' => 'pengguna.'], function() {
+        Route::get('user', function() {return view('mazer.table.user');})->name('user');
     });
 });
 

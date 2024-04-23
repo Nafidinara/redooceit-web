@@ -1,6 +1,6 @@
-{{-- <x-app-layout>
+<x-app-layout>
     <x-slot:title>
-        Tables
+        Forms
     </x-slot>
     <div class="page-heading">
         <div class="page-title">
@@ -1085,4 +1085,4 @@
             </div>
         </section>
     </div>
-</x-app-layout> --}}
+</x-app-layout>
