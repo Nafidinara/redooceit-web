@@ -6,14 +6,14 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Layout Default</h3>
-                    <p class="text-subtitle text-muted">The default layout.</p>
+                    <h3>RedoceeIt</h3>
+                    <p class="text-subtitle text-muted">Membantu anda dalam menangani masalah sampah</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Layout Default</li>
+                            <li class="breadcrumb-item active" aria-current="page">dfgdg</li>
                         </ol>
                     </nav>
                 </div>
@@ -25,9 +25,7 @@
                     <h4 class="card-title">Default Layout</h4>
                 </div>
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, commodi? Ullam quaerat similique iusto
-                    temporibus, vero aliquam praesentium, odit deserunt eaque nihil saepe hic deleniti? Placeat delectus
-                    quibusdam ratione ullam!
+                    RedooceIt adalah Aplikasi tata kelola sampah makanan dengan monitoring, controlling, dan analisis untuk membantu TPS meningkatkan nilai dari sampah makanan menjadi nilai ekonomi yang tinggi
                 </div>
             </div>
         </section>
