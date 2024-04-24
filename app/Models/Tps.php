@@ -22,6 +22,7 @@ class Tps extends Model
     protected $table = 'tps';
 
     protected $fillable = ['name', 'address', 'type', 'latitude', 'longitude'];
+
     protected $casts = [
         'id' => 'string'
     ];

@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tps', function (Blueprint $table) {
-            $table->uuid()->primary();
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->string('address');
-            $table->type("type",["bsu","bsi","tps","tps3r","tpst"])->default("tps");
+            $table->enum("type",["bsu","bsi","tps","tps3r","tpst"])->default("tps");
             $table->string('latitude');
             $table->string('longitude');
             $table->timestamps();

@@ -4,17 +4,14 @@ namespace App\Http\Controllers\UI;
 
 use App\Http\Controllers\Controller;
 use App\Interfaces\TpsRepositoryInterface;
-use Auth;
-use DB;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
-use Request;
+use Illuminate\Http\Request;
 
 class TpsController extends Controller
 {
-
     private TpsRepositoryInterface $tpsRepository;
 
     public function __construct(
@@ -24,35 +21,49 @@ class TpsController extends Controller
         $this->tpsRepository = $tpsRepository;
     }
 
-    public function index()
+    public function index(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('ui.tps.index');
+        $tps = $this->tpsRepository->getAllTps();
+        return view('components.tps.index', compact('tps'));
     }
 
     public function create(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('ui.tps.create');
+        return view('components.tps.create');
     }
 
     public function store(Request $request): RedirectResponse
     {
-
         $this->tpsRepository->createTps($request->all());
-
-        return redirect()->route('ui.tps.index');
+        toastify()->success('Berhasil menambahkan data TPS!');
+        return redirect()->route('tps.index');
     }
 
     public function edit($tps_id): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
     {
         $tps = $this->tpsRepository->getTpsById($tps_id);
 
-        return view('ui.tps.edit', compact('tps'));
+        return view('components.tps.edit', compact('tps'));
     }
 
     public function update(Request $request, $tps_id): RedirectResponse
     {
-        $this->tpsRepository->updateTps($tps_id, $request->all());
+        $this->tpsRepository->updateTps($tps_id, [
+            'name' => $request->name,
+            'type' => $request->type,
+            'latitude' => $request->latitude,
+            'longitude' => $request->longitude,
+            'address' => $request->address
+        ]);
 
-        return redirect()->route('ui.tps.index');
+        toastify()->success('Berhasil mengubah data TPS!');
+        return redirect()->route('tps.index');
+    }
+
+    public function destroy($tps_id): RedirectResponse
+    {
+        $this->tpsRepository->deleteTps($tps_id);
+        toastify()->success('Berhasil menghapus data TPS!');
+        return redirect()->route('tps.index');
     }
 }

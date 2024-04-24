@@ -8,6 +8,8 @@
     @vite(['resources/sass/app.scss', 'resources/sass/themes/dark/app-dark.scss'])
     <link rel="shortcut icon" href="{{ asset('assets/static/images/logo/favicon.svg') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('assets/static/images/logo/favicon.png') }}" type="image/png">
+    @stack('styles')
+    @toastifyCss
 </head>
 
 <body>
@@ -26,12 +28,12 @@
             @include('layouts.partials.footer')
         </div>
     </div>
-    <script src="assets/static/js/components/dark.js"></script>
-    <script src="assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-
+    <script src="{{ asset('assets/static/js/components/dark.js') }}"></script>
+    <script src="{{ asset('assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ url('https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js') }}"></script>
+    @stack('scripts')
     @vite(['resources/js/app.js'])
-    {{-- <script src="assets/js/app.js" type="module"></script> --}}
-
+    @toastifyJs
 </body>
 
 </html>

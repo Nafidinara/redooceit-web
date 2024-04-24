@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\RepositoryServiceProvider;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
@@ -169,6 +170,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        RepositoryServiceProvider::class,
+        // this would probably go in a service provide
     ])->toArray(),
 
     /*

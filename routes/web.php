@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UI\TpsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('dashboard');
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
@@ -32,6 +33,15 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
     });
     Route::group(['prefix' => 'pengguna', 'as' => 'pengguna.'], function() {
         Route::get('user', function() {return view('mazer.table.user');})->name('user');
+    });
+
+    Route::group(['prefix' => 'tps', 'as' => 'tps.'], function() {
+        Route::get('/',[TpsController::class,'index'])->name("index");
+        Route::get('/create',[TpsController::class,'create'])->name("create");
+        Route::post('/store',[TpsController::class,'store'])->name("store");
+        Route::get('/edit/{tps_id}',[TpsController::class,'edit'])->name("edit");
+        Route::put('/update/{tps_id}',[TpsController::class,'update'])->name("update");
+        Route::delete('/destroy/{tps_id}',[TpsController::class,'destroy'])->name("destroy");
     });
 });
 
