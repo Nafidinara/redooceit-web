@@ -26,7 +26,7 @@
                 <div class="card-header d-flex justify-content-between">
                     <div>
                         <h5 class="card-title">
-                            Item Penukaran Data
+                            Data Item Penukaran
                         </h5>
                     </div>
                     <div>

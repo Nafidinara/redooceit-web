@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Tambah Setoran Warga Baru</h3>
-                    <p class="text-subtitle text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p class="text-subtitle text-muted"></p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -40,7 +40,7 @@
                                     <div class="row">
                                         <div class="col-md-12 col-12">
                                             <div class="form-group">
-                                                <label for="warga_id">Warga Id</label>
+                                                <label for="warga_id">Warga ID</label>
                                                 <input type="text" id="warga_id" class="form-control"
                                                        placeholder="Masukkan Id Warga" name="warga_id">
                                             </div>

@@ -8,15 +8,15 @@
 {{--        <x-mazer-sidebar-subitem :link="route('component.carousel')" name="carousel" :active="false"/>--}}
 {{--        <x-mazer-sidebar-subitem :link="route('component.progress')" name="progress" :active="false"/>--}}
 {{--    </x-mazer-sidebar-item>--}}
-    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('tps.index')" name="TPS">
+    <x-mazer-sidebar-item icon="bi bi-recycle" :link="route('tps.index')" name="TPS">
     </x-mazer-sidebar-item>
-    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('sampah.index')" name="Sampah">
+    <x-mazer-sidebar-item icon="bi bi-trash3" :link="route('sampah.index')" name="Sampah">
     </x-mazer-sidebar-item>
-    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('itemPenukaran.index')" name="Item Penukaran">
+    <x-mazer-sidebar-item icon="bi bi-view-list" :link="route('itemPenukaran.index')" name="Item Penukaran">
     </x-mazer-sidebar-item>
-    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('penukaran.index')" name="Penukaran">
+    <x-mazer-sidebar-item icon="bi bi-arrow-left-right" :link="route('penukaran.index')" name="Penukaran">
     </x-mazer-sidebar-item>
-    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('warga.index')" name="Warga">
+    <x-mazer-sidebar-item icon="bi bi-people-fill" :link="route('warga.index')" name="Warga">
     </x-mazer-sidebar-item>
     <x-mazer-sidebar-item icon="bi bi-stack" :link="route('setoranwarga.index')" name="Setoran Warga">
     </x-mazer-sidebar-item>
