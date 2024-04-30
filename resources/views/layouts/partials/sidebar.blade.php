@@ -12,10 +12,22 @@
     </x-mazer-sidebar-item>
     <x-mazer-sidebar-item icon="bi bi-stack" :link="route('sampah.index')" name="Sampah">
     </x-mazer-sidebar-item>
-    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('penukaran.index')" name="penukaran">
+    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('itemPenukaran.index')" name="Item Penukaran">
     </x-mazer-sidebar-item>
-    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('warga.index')" name="WARGA">
+    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('penukaran.index')" name="Penukaran">
+    </x-mazer-sidebar-item>
+    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('warga.index')" name="Warga">
     </x-mazer-sidebar-item>
     <x-mazer-sidebar-item icon="bi bi-stack" :link="route('setoranwarga.index')" name="Setoran Warga">
     </x-mazer-sidebar-item>
+    <li class="sidebar-item">
+        <a class="sidebar-link" href="{{ route('logout') }}"
+           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <i class="bi bi-box-arrow-right"></i> <span>Logout</span>
+        </a>
+    </li>
 </x-mazer-sidebar>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
