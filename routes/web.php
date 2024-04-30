@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UI\TpsController;
+use App\Http\Controllers\UI\PenukaranController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +43,15 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
         Route::get('/edit/{tps_id}',[TpsController::class,'edit'])->name("edit");
         Route::put('/update/{tps_id}',[TpsController::class,'update'])->name("update");
         Route::delete('/destroy/{tps_id}',[TpsController::class,'destroy'])->name("destroy");
+    });
+
+    Route::group(['prefix' => 'penukaran', 'as' => 'penukaran.'], function() {
+        Route::get('/',[PenukaranController::class,'index'])->name("index");
+        Route::get('/create',[PenukaranController::class,'create'])->name("create");
+        Route::post('/store',[PenukaranController::class,'store'])->name("store");
+        Route::get('/edit/{penukaran_id}',[PenukaranController::class,'edit'])->name("edit");
+        Route::put('/update/{penukaran_id}',[PenukaranController::class,'update'])->name("update");
+        Route::delete('/destroy/{penukaran_id}',[PenukaranController::class,'destroy'])->name("destroy");
     });
 });
 
