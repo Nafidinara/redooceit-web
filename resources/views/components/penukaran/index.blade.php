@@ -37,8 +37,8 @@
                     <table class="table table-striped" id="table1">
                         <thead>
                         <tr>
-                            <th>Id Warga</th>
-                            <th>Id Item Penelusuran</th>
+                            <th>ID Warga</th>
+                            <th>ID Item Penelusuran</th>
                             <th>Stamp</th>
                         </tr>
                         </thead>
