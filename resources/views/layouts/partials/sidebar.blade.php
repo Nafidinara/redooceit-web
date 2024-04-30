@@ -17,6 +17,8 @@
     </x-mazer-sidebar-item>
     <x-mazer-sidebar-item icon="bi bi-stack" :link="route('penukaran.index')" name="penukaran">
     </x-mazer-sidebar-item>
+    <x-mazer-sidebar-item icon="bi bi-stack" :link="route('warga.index')" name="WARGA">
+    </x-mazer-sidebar-item>
     <x-mazer-sidebar-item icon="bi bi-stack" :link="route('dashboard')" name="Form Elements">
         <x-mazer-sidebar-subitem :link="route('pengguna.user')" name="tableUser" :active="false"/>
     </x-mazer-sidebar-item>
