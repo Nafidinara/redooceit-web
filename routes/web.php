@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UI\SampahController;
 use App\Http\Controllers\UI\TpsController;
 use App\Http\Controllers\UI\PenukaranController;
 use Illuminate\Support\Facades\Route;
@@ -52,6 +53,15 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
         Route::get('/edit/{penukaran_id}',[PenukaranController::class,'edit'])->name("edit");
         Route::put('/update/{penukaran_id}',[PenukaranController::class,'update'])->name("update");
         Route::delete('/destroy/{penukaran_id}',[PenukaranController::class,'destroy'])->name("destroy");
+    });
+
+    Route::group(['prefix' => 'sampah', 'as' => 'sampah.'], function() {
+        Route::get('/',[SampahController::class,'index'])->name("index");
+        Route::get('/create',[SampahController::class,'create'])->name("create");
+        Route::post('/store',[SampahController::class,'store'])->name("store");
+        Route::get('/edit/{sampah_id}',[SampahController::class,'edit'])->name("edit");
+        Route::put('/update/{sampah_id}',[SampahController::class,'update'])->name("update");
+        Route::delete('/destroy/{sampah_id}',[SampahController::class,'destroy'])->name("destroy");
     });
 });
 
