@@ -23,3 +23,12 @@ function tps_types($type)
         default => 'belum diisi',
     };
 }
+
+function jenis_sampah($type)
+{
+    return match ($type) {
+        'basah' => 'Basah',
+        'kering' => 'Kering',
+        default => 'belum diisi',
+    };
+}
