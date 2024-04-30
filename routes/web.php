@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\UI\SetoranWargaController;
+use App\Http\Controllers\UI\PenukaranController;
+use App\Http\Controllers\UI\SampahController;
 use App\Http\Controllers\UI\TpsController;
 use App\Http\Controllers\UI\ItemPenukaranController;
 use App\Http\Controllers\UI\WargaController;
