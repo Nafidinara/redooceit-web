@@ -2,20 +2,22 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\UUID;
+use Eloquent;
 
-class Sampah extends Model
+
+class Warga extends Model
 {
     use HasFactory, UUID;
-
-    protected $table = 'sampahs';
-
-    protected $fillable = ['tps_id', 'keterangan', 'volume', 'jenis'];
+    protected $table = 'wargas';
+    protected $fillable = ['nama', 'alamat', 'no_hp'];
 
     protected $casts = [
-        'id' => 'string'
+        'warga_id' => 'string'
     ];
+
 
 }

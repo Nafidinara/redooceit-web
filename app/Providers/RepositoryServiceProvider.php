@@ -10,6 +10,8 @@ use App\Interfaces\SampahRepositoryInterface;
 use App\Repositories\SampahRepository;
 use App\Interfaces\ItemPenukaranRepositoryInterface;
 use App\Repositories\ItemPenukaranRepository;
+use App\Interfaces\WargaRepositoryInterface;
+use App\Repositories\WargaRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -25,6 +27,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(PenukaranRepositoryInterface::class, PenukaranRepository::class);
         $this->app->bind(SampahRepositoryInterface::class, SampahRepository::class);
         $this->app->bind(ItemPenukaranRepositoryInterface::class, ItemPenukaranRepository::class);
+        $this->app->bind(WargaRepositoryInterface::class, WargaRepository::class);
     }
 
     /**
