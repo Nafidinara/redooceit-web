@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Interfaces\SetoranWargaRepositoryInterface;
 use App\Interfaces\TpsRepositoryInterface;
 use App\Interfaces\PenukaranRepositoryInterface;
+use App\Repositories\SetoranWargaRepository;
 use App\Repositories\TpsRepository;
 use App\Repositories\PenukaranRepository;
 use App\Interfaces\SampahRepositoryInterface;
@@ -28,6 +30,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(SampahRepositoryInterface::class, SampahRepository::class);
         $this->app->bind(ItemPenukaranRepositoryInterface::class, ItemPenukaranRepository::class);
         $this->app->bind(WargaRepositoryInterface::class, WargaRepository::class);
+        $this->app->bind(TpsRepositoryInterface::class, TpsRepository::class);
+        $this->app->bind(SetoranWargaRepositoryInterface::class, SetoranWargaRepository::class);
     }
 
     /**

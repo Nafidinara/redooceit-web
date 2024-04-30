@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UI\SetoranWargaController;
 use App\Http\Controllers\UI\TpsController;
 use App\Http\Controllers\UI\ItemPenukaranController;
 use App\Http\Controllers\UI\WargaController;
@@ -90,6 +91,16 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
         Route::put('/update/{warga_id}',[WargaController::class,'update'])->name("update");
         Route::delete('/destroy/{warga_id}',[WargaController::class,'destroy'])->name("destroy");
     });
+
+    Route::group(['prefix' => 'setoranwarga', 'as' => 'setoranwarga.'], function() {
+        Route::get('/',[SetoranWargaController::class,'index'])->name("index");
+        Route::get('/create',[SetoranWargaController::class,'create'])->name("create");
+        Route::post('/store',[SetoranWargaController::class,'store'])->name("store");
+        Route::get('/edit/{setoranwarga_id}',[SetoranWargaController::class,'edit'])->name("edit");
+        Route::put('/update/{setoranwarga_id}',[SetoranWargaController::class,'update'])->name("update");
+        Route::delete('/destroy/{setoranwarga_id}',[SetoranWargaController::class,'destroy'])->name("destroy");
+    });
+
 });
 
 require_once __DIR__ . "/auth.php";
