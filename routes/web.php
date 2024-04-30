@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UI\TpsController;
+use App\Http\Controllers\UI\WargaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +43,15 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
         Route::get('/edit/{tps_id}',[TpsController::class,'edit'])->name("edit");
         Route::put('/update/{tps_id}',[TpsController::class,'update'])->name("update");
         Route::delete('/destroy/{tps_id}',[TpsController::class,'destroy'])->name("destroy");
+    });
+
+    Route::group(['prefix' => 'warga', 'as' => 'warga.'], function() {
+        Route::get('/',[WargaController::class,'index'])->name("index");
+        Route::get('/create',[WargaController::class,'create'])->name("create");
+        Route::post('/store',[WargaController::class,'store'])->name("store");
+        Route::get('/edit/{warga_id}',[WargaController::class,'edit'])->name("edit");
+        Route::put('/update/{warga_id}',[WargaController::class,'update'])->name("update");
+        Route::delete('/destroy/{warga_id}',[WargaController::class,'destroy'])->name("destroy");
     });
 });
 
