@@ -7,6 +7,7 @@ use App\Http\Controllers\UI\TpsController;
 use App\Http\Controllers\UI\ItemPenukaranController;
 use App\Http\Controllers\UI\WargaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +103,8 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
         Route::put('/update/{setoranwarga_id}',[SetoranWargaController::class,'update'])->name("update");
         Route::delete('/destroy/{setoranwarga_id}',[SetoranWargaController::class,'destroy'])->name("destroy");
     });
+
+    Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
 
 });
 

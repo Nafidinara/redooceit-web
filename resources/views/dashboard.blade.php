@@ -13,7 +13,12 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">dfgdg</li>
+                            <li class="breadcrumb-item">
+                                <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger btn-sm">Logout</button>
+                                </form>
+                            </li>
                         </ol>
                     </nav>
                 </div>
