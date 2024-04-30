@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\UI\SampahController;
 use App\Http\Controllers\UI\TpsController;
-use App\Http\Controllers\UI\PenukaranController;
+use App\Http\Controllers\UI\ItemPenukaranController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +45,15 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
         Route::delete('/destroy/{tps_id}',[TpsController::class,'destroy'])->name("destroy");
     });
 
+    Route::group(['prefix' => 'itemPenukaran', 'as' => 'itemPenukaran.'], function() {
+        Route::get('/',[ItemPenukaranController::class,'index'])->name("index");
+        Route::get('/create',[ItemPenukaranController::class,'create'])->name("create");
+        Route::post('/store',[ItemPenukaranController::class,'store'])->name("store");
+        Route::get('/edit/{itemPenukaran_id}',[ItemPenukaranController::class,'edit'])->name("edit");
+        Route::put('/update/{itemPenukaran_id}',[ItemPenukaranController::class,'update'])->name("update");
+        Route::delete('/destroy/{itemPenukaran_id}',[ItemPenukaranController::class,'destroy'])->name("destroy");
+    });
+
     Route::group(['prefix' => 'penukaran', 'as' => 'penukaran.'], function() {
         Route::get('/',[PenukaranController::class,'index'])->name("index");
         Route::get('/create',[PenukaranController::class,'create'])->name("create");
@@ -62,7 +70,18 @@ Route::group(['middleware' => 'auth', 'prefix' => '/'], function() {
         Route::get('/edit/{sampah_id}',[SampahController::class,'edit'])->name("edit");
         Route::put('/update/{sampah_id}',[SampahController::class,'update'])->name("update");
         Route::delete('/destroy/{sampah_id}',[SampahController::class,'destroy'])->name("destroy");
+
+        Route::group(['prefix' => 'itemPenukaran', 'as' => 'itemPenukaran.'], function() {
+            Route::get('/',[ItemPenukaranController::class,'index'])->name("index");
+            Route::get('/create',[ItemPenukaranController::class,'create'])->name("create");
+            Route::post('/store',[ItemPenukaranController::class,'store'])->name("store");
+            Route::get('/edit/{itemPenukaran_id}',[ItemPenukaranController::class,'edit'])->name("edit");
+            Route::put('/update/{itemPenukaran_id}',[ItemPenukaranController::class,'update'])->name("update");
+            Route::delete('/destroy/{itemPenukaran_id}',[ItemPenukaranController::class,'destroy'])->name("destroy");
+        });
     });
+
 });
 
 require_once __DIR__ . "/auth.php";
+
